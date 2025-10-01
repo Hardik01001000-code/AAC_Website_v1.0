@@ -1,0 +1,27 @@
+<!--Projects Page-->
+<!--Views projects in cards style-->
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}AAC{% endblock %}
+
+{% block content %}
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="container content">
+        <h1>Projects</h1>
+        <p>Explore the exciting astronimy projects undertaken by the AAC. From building telescopes to conducting research, our members are actively involved in advancing out understanding of the universe.</p>
+    </div>
+    <div class="container projects">
+        {% for project in projects %}
+        <div class="card mb-3" style="width: 69vw; max-height: 27.1vh;">
+            <img class="card-img-bottom" src="{{ project.cover_page.url }}" alt="{{ project.title }}" style="object-fit: cover; object-position: center; max-height: 27.1vh;">
+            <div class="card-body card-img-overlay text-black">
+                <a href="#" class="hidden stretched-link"></a>
+                <h5 class="card-title"><strong>{{ project.title }}</strong></h5>
+                <p style="max-width: 27.5vw;" class="card-text">{{ project.description }}</p>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}

@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+{% load tz %}
+
+{% block title %}AAC{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
+
+{% block content %}
+<div class="background"></div>
+<div class="overlay"></div>
+<div class="container content">
+    <div class="row about p-3">
+        <div class="col-md-8">
+            <h1>{{ event.name }}</h1>
+            {% if event.date %}
+                <p class="text-muted">{{ event.date|localtime|date:"F j, Y" }}</p>
+            {% endif %}
+            {% if event.image %}
+                <img src="{{ event.image.url }}" alt="{{ event.name }}" class="img-fluid mb-4">
+            {% endif %}
+            <p>{{ event.description|linebreaks }}</p>
+            <p><strong>Location: </strong>{{ event.location }}</p>
+            {% if event.registration_link %}
+                <a href="{{ event.registration_link }}">Register Here</a>
+            {% else %}
+            {% endif %}
+        </div>
+        <div class="col-md-4">
+            <h2>Event Details</h2>
+            <ul class="list-group">
+                <li class="list-group-item">
+                    <strong>Date:</strong> {{ event.date|localtime|date:"F j, Y" }}
+                </li>
+                {% if next_occurrence %}
+                <li class="list-group-item">
+                    <strong>Next Date:</strong> {{ next_occurrence.date|date:"F j, Y · g:i A" }}
+                </li>
+                {% else %}
+                <li class="list-group-item text-muted">
+                    No upcoming dates for this event.
+                </li>
+                {% endif %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endblock %}

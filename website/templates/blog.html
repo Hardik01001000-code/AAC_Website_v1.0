@@ -1,0 +1,22 @@
+<!--Blogs Page-->
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}AAC{% endblock %}
+
+{% block extra_js %}
+{% endblock %}
+
+{% block content %}
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="container content">
+        <img src="{{ blog.blog_image.url }}" class="blog-header-image">
+        <div class="blog-content">
+            <h2><strong>{{ object.title }}</strong></h2>
+            <p>{{ object.content|linebreaks }}</p>
+            <h4>Author:</h4>
+            <p>{{ object.author }}</p>
+        </div>
+    </div>
+{% endblock %}

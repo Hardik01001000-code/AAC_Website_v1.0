@@ -1,0 +1,165 @@
+<!--Homepage-->
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}AAC{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/index.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="mainpage">
+        <div class="background"></div>
+        <div class="overlay"></div>
+        <!-- Constellations -->
+        <div class="constellations">
+            <!-- Top Left -->
+            <div class="constellation-wrapper top-left">
+                <img src="{% static 'Constellations-index/C1.png' %}" alt="Stars" class="stars">
+                <img src="{% static 'Constellations-index/O1.png' %}" alt="Connected" class="connected">
+            </div>
+
+            <!-- Top Right -->
+            <div class="constellation-wrapper top-right">
+                <img src="{% static 'Constellations-index/C2.png' %}" alt="Stars" class="stars">
+                <img src="{% static 'Constellations-index/O2.png' %}" alt="Connected" class="connected">
+            </div>
+
+            <!-- Bottom Left -->
+            <div class="constellation-wrapper bottom-left">
+                <img src="{% static 'Constellations-index/C3.png' %}" alt="Stars" class="stars">
+                <img src="{% static 'Constellations-index/O3.png' %}" alt="Connected" class="connected">
+            </div>
+
+            <!-- Bottom Right -->
+            <div class="constellation-wrapper bottom-right">
+                <img src="{% static 'Constellations-index/C4.png' %}" alt="Stars" class="stars">
+                <img src="{% static 'Constellations-index/O4.png' %}" alt="Connected" class="connected">
+            </div>
+        </div>
+
+        <div class="container hero-section">
+            <div class="main-text w-100 d-flex flex-column justify-content-center align-items-center text-white">
+                <div class="aac-text">AAC</div>
+                <p class="club-text">Amateur Astronomy Club</p>
+            </div>
+        </div>
+        <div class="container hero-section">
+            <!--About Us-->
+            <div class="about-section text-white text-center mt-5">
+                <p>
+                    The Amateur Astronomy Club, the oldest and most active at NITK Surathkal, 
+                    has long nurtured curiosity about the cosmos. Through stargazing nights, science tours, projects, and 
+                    flagship events like Astrofest, the club makes astronomy engaging and accessible. With three telescopes and 
+                    four SIGs—Astronomy, Astrophysics, Astronautics, and Astroverse—we offer students hands-on exploration, 
+                    learning, and discovery under the stars.
+                </p>
+            </div>
+
+            <!-- SIGs Section -->
+            <div class="row justify-content-center g-4">
+                <!-- Astronomy -->
+                <div class="col-md-6 col-lg-6">
+                <div class="card sig-card h-100 mt-4">
+                    <div class="card-body">
+                    <h5 class="card-title">Astronomy</h5>
+                    <h6 class="card-subtitle mb-2">Observation</h6>
+                    <p class="card-text">
+                        Dedicated to sky-watching, this SIG hosts stargazing, telescope viewings, and night-sky events, 
+                        bringing students closer to the cosmos.
+                    </p>
+                    </div>
+                </div>
+                </div>
+                <!-- Astrophysics -->
+                <div class="col-md-6 col-lg-6">
+                <div class="card sig-card h-100 mt-4">
+                    <div class="card-body">
+                    <h5 class="card-title">Astrophysics</h5>
+                    <h6 class="card-subtitle mb-2">Theory</h6>
+                    <p class="card-text">
+                        Focused on the science of the universe, it explores black holes, galaxies, particle physics, and 
+                        cosmology—the “why” behind what we see.
+                    </p>
+                    </div>
+                </div>
+                </div>
+                <!-- Astronautics -->
+                <div class="col-md-6 col-lg-6">
+                <div class="card sig-card h-100 mt-4">
+                    <div class="card-body">
+                    <h5 class="card-title">Astronautics</h5>
+                    <h6 class="card-subtitle mb-2">Application</h6>
+                    <p class="card-text">
+                        Where engineering meets space, this SIG works on rocketry, satellites, and space-tech projects, 
+                        offering hands-on innovation beyond Earth.
+                    </p>
+                    </div>
+                </div>
+                </div>
+                <!-- Astroverse -->
+                <div class="col-md-6 col-lg-6">
+                <div class="card sig-card h-100 mt-4">
+                    <div class="card-body">
+                    <h5 class="card-title">Media & Publicity</h5>
+                    <h6 class="card-subtitle mb-2">Stories & Imagination</h6>
+                    <p class="card-text">
+                        Crafting narratives that inspire, this SIG manages creative content, design, and 
+                        outreach—spreading ideas through words, visuals, and media to connect people and spark 
+                        imagination.
+                    </p>
+                    </div>
+                </div>
+                </div>
+            </div>
+
+            <!--Events Carousel-->
+            <div id="carouselExampleCaptions" class="carousel slide mt-4" data-bs-ride="carousel">
+                <div class="carousel-indicators">
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" aria-label="Slide 2"></button>
+                    <button type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" aria-label="Slide 3"></button>
+                </div>
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                    <img src="{% static 'carousel_images/Starry Nights.webp' %}" alt="..."
+                    class="d-block w-100 mt-4">
+                    <div class="carousel-caption">
+                        <h5>Starry Nights</h5>
+                        <p>Starry Nights, our signature open-sky event, lets students witness the universe firsthand through 
+                            guided stargazing, telescope viewings, and interactive discussions—where curiosity meets wonder 
+                            under the stars.</p>
+                    </div>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="{% static 'carousel_images/astrocomm4.webp' %}" class="d-block w-100 mt-4" alt="...">
+                    <div class="carousel-caption">
+                        <h5>Astro Committee</h5>
+                        <p>The AstroCommittee, one of NITK’s three official fest committees, brings the cosmos to Incident and 
+                            Engineer. As a part of AAC, we curate shows, exhibits, and telescopic sessions, making space 
+                            exploration an exciting part of the fest atmosphere.</p>
+                    </div>
+                    </div>
+                    <div class="carousel-item">
+                    <img src="{% static 'carousel_images/scitutor1.webp' %}" class="d-block w-100 mt-4" alt="...">
+                    <div class="carousel-caption">
+                        <h5>Sci-Tutor</h5>
+                        <p>Our science tours take learning beyond campus, with visits to observatories, research centers, 
+                            and space facilities. They offer hands-on exposure to cutting-edge science and inspire a deeper 
+                            connection to the future of space exploration.</p>
+                    </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+    </div>
+{% endblock %}

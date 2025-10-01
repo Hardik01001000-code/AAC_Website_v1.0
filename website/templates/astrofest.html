@@ -1,0 +1,49 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}AAC{% endblock %}
+{% block content %}
+<div class="background"></div>
+<div class="overlay"></div>
+
+<div class="container content">
+    <div class="container-fluid about row g-3">
+        <h1>SAstrofest</h1>
+
+        <!-- First block -->
+        <div class="row align-items-center mb-4">
+            <div class="col-md-4">
+                <img src="{% static 'Major Events/for astrofest/1.jpg' %}" 
+                     alt="Starry Nights 1" class="img-fluid rounded">
+            </div>
+            <div class="col-md-8">
+                <p>
+                    Astro Fest is our club’s flagship celebration, held during the even semester, and it spans an 
+                    entire week filled with exciting events and activities. The fest is designed to bring together 
+                    students with diverse interests and offer them a unique blend of learning, exploration, and fun, 
+                    all under the theme of astronomy and space sciences.
+                </p>
+            </div>
+        </div>
+
+        <!-- Second block -->
+        <div class="row align-items-center mb-4">
+            <div class="col-md-4 order-md-2">
+                <img src="{% static 'Major Events/for astrofest/2.jpg' %}" 
+                     alt="Starry Nights 2" class="img-fluid rounded">
+            </div>
+            <div class="col-md-8 order-md-1">
+                <p>
+                    Throughout the week, participants get to experience a wide variety of events. These include 
+                    Astroquiz, where knowledge meets curiosity; a space-themed treasure hunt that combines adventure 
+                    with problem-solving; an engaging workshop on Astrophotography for those fascinated by capturing 
+                    the night sky; and Starry Nights, where students gather on the Science Block terrace to observe the 
+                    cosmos together. Alongside these, we host Knowledge Sharing Sessions (KSS) on captivating topics that 
+                    spark curiosity and broaden horizons.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

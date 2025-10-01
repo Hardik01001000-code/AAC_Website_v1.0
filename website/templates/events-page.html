@@ -1,0 +1,189 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}AAC{% endblock %}
+
+{% block extra_js %}
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;500;700;900&family=Spline+Sans:wght@400;500;700&display=swap" />
+
+<script src="{% static 'js/events.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+<div class="background"></div>
+<div class="overlay"></div>
+
+<div class="container-fluid content">
+    <div class="d-flex flex-column h-100">
+
+        <!-- Hero Banner -->
+        <div class="hero-banner px-3 px-md-5 flex-grow-1 py-4">
+            <div class="limit-width">
+                <div class="events-hero bg-dark rounded-3 overflow-hidden"
+                    style='background-image: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, transparent 25%), url("https://lh3.googleusercontent.com/aida-public/AB6AXuCtVz56Q8rnBSfJdPRsSF0kcWp2gEcziVYhthjv0882iUfRDKnSUidEmJ25p_f0g3u7oTI2yeaup7gZQ7OwRP6HPpemSEKq5hkuwFpi8CHFF71EIoWpEPKmwbK9ydpPveD6FLw3Id4SpRxysFidKh2qJysfWWLLpyZ5CHMtqHE6ppUKeHUo9k_3TWBhcr0tD08MvCawelW1IA32N6pbrAS0EPjynHo6wDDyBrrfGZapyNpEkX9r7PPH_nitxcTUwzbS7FCUwlc3-oo");'>
+                    <div class="p-4 text-center">
+                    <p class="text-white fs-2 fw-bold lh-tight">Our Events</p>
+                    </div>
+                </div>
+        </div>
+
+        <!-- Floating Calendar Button -->
+        <button id="calendar-toggle" 
+                style="position: fixed; bottom: 20px; right: 20px; 
+                    background-color: #007bff; border: none; 
+                    border-radius: 50%; width: 60px; height: 60px; 
+                    display: flex; align-items: center; justify-content: center; 
+                    color: white; font-size: 24px; z-index: 9999; cursor: pointer;">
+            📅
+        </button>
+
+        <!-- Calendar Popup -->
+        <div id="calendar-popup" 
+            style="display: none; position: fixed; bottom: 90px; right: 20px; 
+                    background: #1e1e1e; padding: 20px; border-radius: 8px; 
+                    box-shadow: 0 4px 12px rgba(0,0,0,0.5); 
+                    z-index: 10000; max-width: 400px; overflow-y: auto;">
+            
+            <!-- Keep your existing calendar table and month nav here -->
+            <div id="calendar-controls" class="d-flex justify-content-between align-items-center my-3"
+                data-current-year="{{ year }}" data-current-month="{{ month }}">
+                <button id="prev-month" class="btn btn-outline-primary"
+                    data-year="{{ prev_year }}" data-month="{{ prev_month }}">Previous</button>
+
+                <span id="calendar-month" class="fw-bold text-white">
+                    {{ month_name }} {{ year }}
+                </span>
+
+                <button id="next-month" class="btn btn-outline-primary"
+                    data-year="{{ next_year }}" data-month="{{ next_month }}">Next</button>
+            </div>
+            <div class="table-responsive mb-4">
+                <table class="table table-bordered text-center align-middle">
+                    <thead class="table-dark">
+                        <tr>
+                            <th>Sun</th>
+                            <th>Mon</th>
+                            <th>Tue</th>
+                            <th>Wed</th>
+                            <th>Thu</th>
+                            <th>Fri</th>
+                            <th>Sat</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for week in month_days %}
+                        <tr>
+                            {% for day in week %}
+                                {% if day == 0 %}
+                                    <td class="bg-light"></td>
+                                {% else %}
+                                    <td class="calendar-day {% if day in events_by_day %}bg-primary text-white{% endif %}"
+                                        data-day="{{ day }}">
+                                        <div class="fw-bold">{{ day }}</div>
+                                    </td>
+                                {% endif %}
+                            {% endfor %}
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+
+        <!-- Event List -->
+        <div class="center-ki-ra">
+            <h3 class="mb-3 px-3 px-md-5 flex-grow-1 py-4">Events in {{ month_name }} {{ year }}</h3>
+            <div class="events-list">
+            </div>
+        </div>
+        <!-- Major Events -->
+        <div id="major-events-template" style="display: none;">
+        <h4 class="mt-3">Our Major Events</h4>
+
+        <div class="major-cards">
+            <!-- Starry Nights -->
+            <div class="card mb-3 shadow-sm major-card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <img src="{% static 'Major Events/Starry Nights cover.webp' %}" 
+                    class="img-fluid rounded-start h-100 object-fit-cover" 
+                    alt="Starry Nights">
+                </div>
+                <div class="col-md-8 d-flex flex-column justify-content-between p-3">
+                <div>
+                    <p class="h5 fw-bold mb-1">Starry Nights</p>
+                    <p class="text-muted small mb-3">Starry Nights, our signature open-sky event, lets students witness 
+                        the universe firsthand through guided stargazing, telescope viewings, and interactive 
+                        discussions—where curiosity meets wonder under the stars.</p>
+                </div>
+                <a href="{% url 'starry-nights' %}" class="btn btn-primary btn-sm mt-auto">View Details</a>
+                </div>
+            </div>
+            </div>
+
+            <!-- Astrocommittee -->
+            <div class="card mb-3 shadow-sm major-card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <img src="{% static 'Major Events/Astrocommittee cover.webp' %}" 
+                    class="img-fluid rounded-start h-100 object-fit-cover" 
+                    alt="AstroCommittee">
+                </div>
+                <div class="col-md-8 d-flex flex-column justify-content-between p-3">
+                <div>
+                    <p class="h5 fw-bold mb-1">Astrocommittee</p>
+                    <p class="text-muted small mb-3">The AstroCommittee, one of NITK’s three official fest committees, 
+                        brings the cosmos to Incident and Engineer. As a part of AAC, we curate shows, exhibits, and telescopic sessions, making space exploration an exciting part of the fest atmosphere.</p>
+                </div>
+                <a href="{% url 'astrocommittee' %}" class="btn btn-primary btn-sm mt-auto">View Details</a>
+                </div>
+            </div>
+            </div>
+
+            <!-- Astrofest -->
+            <div class="card mb-3 shadow-sm major-card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <img src="{% static 'Major Events/Astrofest cover.webp' %}" 
+                    class="img-fluid rounded-start h-100 object-fit-cover" 
+                    alt="AstroCommittee">
+                </div>
+                <div class="col-md-8 d-flex flex-column justify-content-between p-3">
+                <div>
+                    <p class="h5 fw-bold mb-1">Astrofest</p>
+                    <p class="text-muted small mb-3">Astro fest is a week full of event conducted with events like astro 
+                        quiz,  space tech related treasure hunt and games conducted related to the space science. </p>
+                </div>
+                <a href="{% url 'astrofest' %}" class="btn btn-primary btn-sm mt-auto">View Details</a>
+                </div>
+            </div>
+            </div>
+
+            <!-- KSS -->
+            <div class="card mb-3 shadow-sm major-card">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <img src="{% static 'Major Events/KSS.webp' %}" 
+                    class="img-fluid rounded-start h-100 object-fit-cover" 
+                    alt="AstroCommittee">
+                </div>
+                <div class="col-md-8 d-flex flex-column justify-content-between p-3">
+                <div>
+                    <p class="h5 fw-bold mb-1">Knowledge Sharing Sessions(KSS)</p>
+                    <p class="text-muted small mb-3">Knowledge Sharing Sessions bring space science to schools through 
+                        interactive talks, quizzes, and discussions—igniting curiosity and inspiring young minds to explore 
+                        the universe.</p>
+                </div>
+                <a href="{% url 'kss' %}" class="btn btn-primary btn-sm mt-auto">View Details</a>
+                </div>
+            </div>
+            </div>
+
+        </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

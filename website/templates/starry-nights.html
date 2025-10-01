@@ -1,0 +1,53 @@
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}AAC{% endblock %}
+{% block content %}
+<div class="background"></div>
+<div class="overlay"></div>
+
+<div class="container content">
+    <div class="container-fluid about row g-3">
+        <h1>Starry Nights</h1>
+
+        <!-- First block -->
+        <div class="row align-items-center mb-4">
+            <div class="col-md-4">
+                <img src="{% static 'Major Events/for starry nights/1.jpg' %}" 
+                     alt="Starry Nights 1" class="img-fluid rounded">
+            </div>
+            <div class="col-md-8">
+                <p>
+                    Starting with a primary focus on the Star Gazing Club (SGE) at NITK—one of the oldest and most 
+                    storied clubs on campus—our Starry Night sessions have grown into signature, eye-catching events. 
+                    We organise regular observing nights throughout the year around noteworthy celestial happenings 
+                    (meteor showers, planetary alignments, eclipses and seasonal constellations), each offering guided 
+                    telescope viewings, short talks, and hands-on demonstrations. The sessions welcome everyone from 
+                    curious beginners to experienced skywatchers, teaching constellation navigation, basic astrophotography, 
+                    and safe telescope use while fostering a friendly community of space enthusiasts. We also document and 
+                    share highlights from every session, building a visual archive of the cosmos and the club’s discoveries.
+                </p>
+            </div>
+        </div>
+
+        <!-- Second block -->
+        <div class="row align-items-center mb-4">
+            <div class="col-md-4 order-md-2">
+                <img src="{% static 'Major Events/for starry nights/2.jpg' %}" 
+                     alt="Starry Nights 2" class="img-fluid rounded">
+            </div>
+            <div class="col-md-8 order-md-1">
+                <p>
+                    Starry nights sessions are one of the main attractions during the annual tech fest of the institute – Engineer 
+                    in the odd semester and the cultural fest – Incident in the even semester. Starry nights on these events attract 
+                    a lot of sky gazing amateurs to witness the beauty of cosmos through the lens in magnificent way, to experience 
+                    the brilliant bright stars. Not restricting to institute level events, we also organize multiple starry night 
+                    sessions on rare astronomical events like planet’s parade, lunar eclipse and much more – from the sunspots in 
+                    daylight to the brightest stars and planets in the night sky, captured through telescopes.
+                </p>
+            </div>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

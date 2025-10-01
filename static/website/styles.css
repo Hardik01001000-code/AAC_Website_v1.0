@@ -1,0 +1,1661 @@
+.club-text{
+    font-size: 2.6rem;
+    text-align: center;
+    word-break: break-word;
+}
+
+.aac-text{
+    font-size: clamp(6rem, 15vw, 15rem);
+    text-align: center;
+    font-weight: bold;
+    line-height: 1;
+    display: block;
+}
+
+.nav-item {
+  font-size: large;
+}
+
+@media (max-width: 768px) {.club-text{
+        font-size: 1.2rem;
+        display: block;
+    }
+    .aac-text{
+        font-size: clamp(3rem, 20vw, 7rem);
+        display: block;
+        margin-bottom: 1rem;
+    }
+}
+
+#calendar-popup table{
+    table-layout: fixed;
+    width: 100%;
+    border-collapse: separate !important;
+    border-spacing: 8px;
+}
+
+.constellations{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 0.7;
+    pointer-events: none;
+    z-index: 100;
+}
+
+.background{
+    background: url(hero-section-homepage.webp) no-repeat center;
+    background-size: cover;
+    width: 100%;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: -10;
+}
+
+.mainpage{
+    position: relative;
+    width: 100%;
+    min-height: 100vh; /* fills screen but also grows with content */
+}
+
+@media (max-width: 991px) {
+    .sidebar{
+        background-color: rgba(191, 191, 255, 0.15);
+        backdrop-filter: blur(10px);
+    }
+}
+
+
+
+.overlay{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    z-index: -5;
+}
+
+.main-text{
+    margin-top: 2vh;
+    color: white;
+    text-shadow:
+        0 0 3px #fff,
+        0 0 12px #fff;
+    text-align: center;
+    font-size: 50px;
+    z-index: 2;
+}
+
+a{
+    color: white !important;
+    text-decoration: none !important;
+}
+
+body{
+    padding-top: 56px; /* match your navbar height */
+}
+
+
+
+img{
+    object-fit: cover;
+}
+
+.sig-card{
+  background: rgba(0, 0, 0, 0.6); /* black with transparency */
+  color: white; /* text color */
+  border: 1px solid rgba(255, 255, 255, 0.2); /* subtle border */
+  border-radius: 10px; 
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.sig-card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.8);
+}
+
+.sig-card .card-subtitle{
+  color: rgba(200, 200, 200, 0.9); /* softer subtitle color */
+}
+
+
+.about-section{
+    position: relative;
+    margin-top: -5vh;   /* pulls it closer to bottom of hero */
+    background: rgba(20, 20, 20, 0.85); /* dark semi-transparent block */
+    backdrop-filter: blur(6px);
+    padding: 3rem 2rem;
+    border-radius: 16px 16px 0 0;  /* rounded top corners */
+    z-index: 2;
+}
+
+.about-section h2{
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.about-section p{
+    font-size: 1.1rem;
+    line-height: 1.6;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/*-------Button below Hero Text--------*/
+.hero-buttons ul{
+    margin-top: 2vh;
+    z-index: 200;
+    list-style-type: none;
+    color: white;
+    padding: 10px;
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+}
+
+.hero-buttons li{
+    flex: 1;
+    background: rgba(13, 31, 50, 0.6);
+    text-align: center;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid white;
+    border-radius: 8px;
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease;
+    max-width: 200px;
+    min-width: 120px;
+}
+
+.hero-buttons li:hover{
+    background: rgba(13, 31, 50, 0.9);
+}
+
+
+.carousel-item img{
+    height: 40vh;
+}
+
+
+.more-nav-items{
+    position: relative;
+    z-index: 2;
+}
+
+.projects{
+    position: relative;
+    margin-top: 4rem auto;
+    padding: 6em;
+    margin-left: calc(8vw);
+    margin-right: calc(8vw);
+    z-index: 2;
+}
+
+.content{
+    position: relative;
+    z-index: 2;
+    color: white;
+}
+
+.project-content{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+}
+
+/*-----Gallery Page-----*/
+.img-sections{
+    position: relative;
+    z-index: 2;
+}
+
+.card-img-overlay{
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    color: black;
+}
+
+
+/*-----Blogs Page-----*/
+#search{
+    position: relative;
+    top: 8rem;
+    z-index: 2;
+    max-width: 1025px;
+    margin-left: calc(16vw);
+    margin-right: calc(16vw);
+}
+
+.blog .card{
+    position: relative;
+    top: 10rem;
+    margin-top: 2rem auto;
+    margin-left: calc(16vw);
+    margin-right: calc(16vw);
+    padding: 1rem;
+    z-index: 2;
+}
+
+
+/*-----Constellations-----*/
+
+
+
+/* Each constellation area */
+.constellation-wrapper{
+    position: absolute;
+    width: 350px;   /* hover area width (increased) */
+    height: 350px;  /* hover area height (increased) */
+    pointer-events: auto; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Stars always visible */
+.stars{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: auto;
+}
+
+/* Connected lines initially hidden */
+.connected{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 150px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+}
+
+/* Show connected lines on hover */
+.constellation-wrapper:hover .connected{
+    opacity: 1;
+}
+
+/* Corner positions */
+.top-left{
+    top: 0vh;
+    left: 10vw;
+}
+.top-right{
+    top: 0vh;
+    right: 0vw;
+}
+.bottom-left{
+    top: 30vh;
+    left: 10vw;
+}
+.bottom-right{
+    top: 30vh;
+    right: 0vw;
+}
+
+
+.center-ki-ra {
+  margin: 0 auto;
+  text-align: center;
+}
+
+#calendar-popup th,
+#calendar-popup td{
+    width: 14.28%; /* 100 / 7 */
+    height: 60px;  /* adjust for your design */
+    vertical-align: middle;
+}
+
+.tab-active{
+    border-bottom: 3px solid white;
+    color: white;
+    padding: 1rem 0;
+    font-weight: bold;
+}
+.tab-inactive{
+    border-bottom: 3px solid transparent;
+    color: #9ca9ba;
+    padding: 1rem 0;
+    font-weight: bold;
+}
+.calendar-card{
+    min-width: 18rem;
+    max-width: 336px;
+    color: white;
+}
+.day-header{
+    font-size: 13px;
+    font-weight: bold;
+    text-align: center;
+    height: 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.day-btn{
+    height: 3rem;
+    width: 100%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.section-title{
+    font-size: 22px;
+    font-weight: bold;
+    color: white;
+    margin-top: 2rem;
+    padding: 0 1rem;
+}
+.event-card{
+    display: flex;
+    gap: 1rem;
+    padding: 1rem;
+    border-radius: 0.75rem;
+    background-color: transparent;
+}
+.event-title{
+    font-weight: bold;
+    color: white;
+}
+.event-time{
+    color: #9ca9ba;
+    font-size: 0.875rem;
+}
+.view-btn{
+    background: #283039;
+    color: white;
+    padding: 0.25rem 1rem;
+    border-radius: 9999px;
+    font-size: 0.875rem;
+}
+.event-img{
+    flex: 1;
+    aspect-ratio: 16 / 9;
+    border-radius: 0.75rem;
+    background-size: cover;
+    background-position: center;
+}
+
+.calendar-day.active{
+  outline: 3px solid rgba(13,110,253,0.35); /* soft blue ring */
+  box-shadow: 0 6px 18px rgba(13,110,253,0.12);
+  border-radius: 6px;
+}
+
+.transition-fade{
+  transition: opacity 250ms ease, transform 250ms ease;
+  will-change: opacity, transform;
+}
+.transition-hidden{
+  opacity: 0;
+  transform: translateY(8px);
+}
+.transition-visible{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.events-list .card{
+  transition: transform 220ms ease, opacity 220ms ease;
+}
+.events-list .card.enter{
+  opacity: 0;
+  transform: translateY(8px);
+}
+.events-list .card.enter.enter-to{
+  opacity: 1;
+  transform: translateY(0);
+}
+
+#calendar-popup table th,
+#calendar-popup table td{
+    border: none !important;
+    background: transparent;
+}
+
+#calendar-popup table td.calendar-day{
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    padding: 0;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+#calendar-popup table td.calendar-day div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+#calendar-popup table td.bg-primary{
+    background-color: rgba(0, 123, 255, 0.8) !important;
+    color: white;
+}
+
+#calendar-popup table td.calendar-day:hover{
+    background-color: rgba(0, 123, 255, 0.6) !important;
+    color: white;
+    transform: scale(1.05);
+}
+
+#calendar-popup table td.active{
+    background-color: #007bff !important;
+    color: white;
+}
+
+#calendar-popup table td.bg-light{
+    background-color: transparent !important;
+}
+
+#calendar-popup{
+    background: rgba(30, 30, 30, 0.85) !important;
+    backdrop-filter: blur(4px);
+    border-radius: 8px;
+}
+
+#calendar-popup table td{
+    width: 45px !important;
+    height: 45px !important;
+    padding: 0 !important;
+    border-radius: 50% !important;
+    text-align: center;
+    vertical-align: middle;
+    background-color: transparent;
+}
+
+#calendar-popup table td div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+}
+
+#calendar-popup table td.bg-light{
+    background-color: transparent !important;
+}
+
+#calendar-popup table td{
+    padding: 0 !important;
+    border: none !important;
+}
+
+#calendar-popup table td div{
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto; /* centers the circle in the cell */
+}
+
+#calendar-popup table td.calendar-day div{
+    background-color: transparent;
+}
+
+#calendar-popup table td.bg-primary div{
+    background-color: #0d6efd;
+    color: white;
+}
+
+#calendar-popup{
+    background: rgba(30, 30, 30, 0.9);
+    overflow-x: auto; /* allow horizontal scroll if needed */
+}
+
+/* ----------------------------
+   Mobile Responsive Fixes ONLY
+   ---------------------------- */
+
+@media (max-width: 767.98px){
+  .main-text{
+    font-size: 1.8rem !important;
+    margin-top: 1rem;
+  }
+
+  .main-text div{
+    font-size: 1rem !important;
+  }
+
+  .main-text div div{
+    font-size: 12vw !important; /* instead of 25vh, scales with screen */
+  }
+}
+
+@media (max-width: 575.98px){
+  .hero-buttons ul{
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero-buttons li{
+    flex: 1 1 45%;
+    min-width: 0;
+  }
+}
+
+@media (max-width: 767.98px){
+  .about-section{
+    margin-top: 1rem !important;  /* remove the negative overlap */
+    border-radius: 10px;
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 767.98px){
+  .sig-card{
+    margin-bottom: 1rem;
+  }
+  .col-md-6.col-lg-6{
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 767.98px){
+  .carousel-item img{
+    height: auto;
+    max-height: 40vh;
+  }
+}
+
+.club-title{
+  text-align: center;
+  margin: 0 auto;
+  display: inline-block; /* so width is based on longest line */
+}
+
+/* Keep constellation wrappers fixed in place */
+.constellation-wrapper{
+    position: absolute;
+    width: 200px;   /* restore smaller hit area */
+    height: 200px;
+    pointer-events: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1; /* above background/overlay, below text */
+}
+
+/* Stars always visible */
+.constellation-wrapper .stars{
+    width: 120px;
+    height: auto;
+    pointer-events: none;
+}
+
+/* Connected lines appear on hover */
+.constellation-wrapper .connected{
+    width: 120px;
+    height: auto;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    pointer-events: none;
+}
+
+.constellation-wrapper:hover .connected{
+    opacity: 1;
+}
+
+/* ----------------- MOBILE FIXES ----------------- */
+@media (max-width: 768px){
+  .main-text{
+    font-size: 1.8rem;
+    margin-top: 4vh;
+    padding: 0 1rem;
+  }
+
+  .main-text .aac-title{
+    font-size: 15vh; /* adjust as needed */
+    line-height: 1;
+    display: block;
+    text-align: center;
+  }
+
+  .main-text .club-subtitle{
+    font-size: 1.2rem;
+    display: block;
+    text-align: center;
+  }
+
+  .sig-card{
+    margin: 0 auto;
+    width: 90% !important;
+  }
+
+  .row.justify-content-center.g-4{
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .about-section{
+    margin-top: 2rem;
+    border-radius: 12px;
+    padding: 2rem 1rem;
+  }
+}
+
+html, body{
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+.main-text .aac-title{
+  font-size: 25vh;   /* stays oversized */
+  line-height: 1;
+  word-wrap: break-word; /* break if needed */
+  text-align: center;
+}
+
+@media (max-width: 576px){
+  
+}
+
+.aac-title{
+  font-size: 25vh;
+  line-height: 1;
+  text-align: center;
+  position: absolute;
+  top: 50%;       /* vertical center */
+  left: 50%;      /* horizontal center */
+  transform: translate(-50%, -50%);
+  width: 100%;    /* keeps alignment safe */
+}
+
+@media (max-width: 576px){
+  
+  .club-text::before{
+    content: "Amateur \A Astronomy \A Club";
+    white-space: pre;  /* force each word on a new line */
+    display: block;
+  }
+  
+  .club-text::before{
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+}
+
+@media (max-width: 576px){
+  .club-text::before{
+    content: "Amateur \A Astronomy \A Club";
+    white-space: pre;
+    display: block;
+  }
+
+  .club-text::before{
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+
+  .hero-buttons{
+    margin-top: 12vh;
+  }
+}
+
+@media (max-width: 576px){
+  .club-text::before{
+    content: "Amateur \A Astronomy \A Club";
+    white-space: pre;
+    display: block;
+    font-size: inherit;
+  }
+
+  .club-text::before{
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    right: 0;
+    text-align: center;
+  }
+}
+
+/* Ensure only one vertical scrollbar across all pages */
+.background,
+.overlay{
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+}
+
+/* Body controls the only scroll */
+html, body{
+  height: 100%;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+/* Kill accidental nested scrolls */
+main,
+.mainpage,
+.container,
+.container-fluid,
+.row{
+  height: auto !important;
+  max-height: none !important;
+  overflow: visible !important;
+}
+
+/* 🔥 BLOGS PAGE FIX: remove 'top' offset and use margin instead */
+#search{
+  top: auto !important;
+  margin-top: 8rem !important;
+}
+
+.blog .card{
+  top: auto !important;
+  margin-top: 4rem !important;
+}
+
+/* ✅ EVENTS PAGE CARD FIX */
+.events-list .card{
+  max-width: 950px;   /* same as your inline */
+  margin: 0 auto 1.5rem auto; /* centered + spacing */
+  font-size: 0.9rem;
+  background: rgba(0, 0, 0, 0.75);
+  color: white;
+  border: 1px solid rgba(255, 255, 255, 0.2);;
+}
+
+/* Slightly smaller image height */
+.events-list .card .col-md-4{
+  min-height: 140px;
+}
+
+/* 📅 Force all calendar day numbers to be white */
+#calendar-popup table td.calendar-day div{
+  color: white !important;
+}
+
+/* Make 'View Details' button smaller */
+.events-list .btn.btn-primary.btn-sm{
+  font-size: 1.05rem;
+  border-radius: 6px;    /* optional: slightly rounded */
+  max-width: 150px;
+}
+
+/* Photo Gallery fixes */
+.img-sections .card{
+  border-radius: 12px;
+  color: white;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  background: rgba(0, 0, 0, 0.6);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4); /* soft default shadow */
+}
+
+.img-sections .card:hover{
+  transform: translateY(-5px);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.6); /* stronger shadow on hover */
+}
+
+.img-sections .card img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* ===== Blogs page: search + categories alignment ===== */
+.search{
+  position: relative;
+  padding-top: 4.5rem;         /* keeps the space you intended instead of using top: */
+  padding-left: 16vw;         /* keep same left/right horizontal margin as your cards */
+  padding-right: 16vw;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  box-sizing: border-box;
+  flex-wrap: wrap;            /* allows wrapping on small screens */
+}
+
+/* override the old #search top/margins */
+.search #search{
+  position: static !important;
+  margin: 0 !important;
+  flex: 1 1 700px;            /* flexible input that expands */
+  max-width: 1025px;
+  min-width: 200px;
+  box-sizing: border-box;
+}
+
+/* keep the category select compact */
+.search #category{
+  flex: 0 0 auto;
+  min-width: 170px;
+  width: auto;
+  box-sizing: border-box;
+}
+
+/* ensure blog cards line up with same side padding */
+.blog{
+  padding-left: 16vw;
+  padding-right: 16vw;
+  box-sizing: border-box;
+}
+
+/* remove debug red (if present) */
+.search #category{ background: initial; }
+
+/* Make each blog card as wide as before */
+.blog .card{
+  max-width: 1000px;   /* restore old size */
+  margin: 2rem auto;   /* center cards and add spacing */
+  padding: 1rem;
+  background: rgba(20, 20, 20, 0.85);
+  color: white;
+  border: solid 1px rgba(255, 255, 255, 0.15);
+}
+
+.blog .card .card-text{
+  color: rgba(200, 200, 200, 0.9); /* softer text color */
+}
+
+/* 🎨 Custom styling for category dropdown */
+#category{
+  background-color: rgba(20, 20, 30, 0.85); /* dark semi-transparent */
+  color: white;                             /* white text */
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  padding: 0.5rem 2rem 0.5rem 0.75rem;      /* right padding for arrow */
+  appearance: none;                         /* remove default OS arrow */
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: url("data:image/svg+xml;charset=UTF-8,<svg xmlns='http://www.w3.org/2000/svg' fill='white' viewBox='0 0 16 16'><path d='M1.5 5.5l6 6 6-6'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center; /* position arrow */
+  background-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Hover & focus effects */
+#category:hover{
+  background-color: rgba(40, 40, 60, 0.95);
+  border-color: white;
+}
+
+#category:focus{
+  outline: none;
+  border-color: #0d6efd; /* Bootstrap blue highlight */
+  box-shadow: 0 0 0 2px rgba(13, 110, 253, 0.4);
+}
+
+/* === Force AAC larger on mobile - put this at the very end of styles.css === */
+@media (max-width: 576px) {
+  .main-text .aac-text,
+  .aac-text {
+    font-size: 6rem !important;    /* <-- change this value to taste (3rem, 4rem, 5rem...) */
+    line-height: 1.05 !important;
+    font-weight: 700 !important;
+    display: block !important;
+    text-align: center !important;
+  }
+
+  /* make sure subtitle stays smaller and doesn't overlap */
+  .main-text .club-text,
+  .club-text {
+    font-size: 1.5rem !important;
+    line-height: 1.1 !important;
+    display: block !important;
+    text-align: center !important;
+    margin-top: 0.15rem !important;
+  }
+
+  /* remove any pseudo-element duplication that might overlap */
+  .club-text::before { content: none !important; }
+}
+
+/* Responsive logo using clamp */
+.navbar-brand img {
+  width: clamp(40px, 6vw, 60px); /* min:40px, preferred:6% of viewport width, max:72px */
+  height: auto;
+  display: inline-block;
+  transition: width 0.2s ease;
+}
+
+/* Blog post content */
+.blog-content {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  background-color: rgba(40, 40, 60, 0.95);
+  border-radius: 0 0 8px 8px; /* ✅ Only bottom corners rounded */
+  padding: 1.5rem;
+  width: 85vw; /* ✅ Same width as image */
+  margin: 0 auto; /* ✅ Center align like image */
+}
+
+/* Ensure image and content align perfectly */
+.blog-header-image {
+  width: 85vw;
+  display: block;
+  margin: 0 auto; /* center */
+  border-radius: 8px 8px 0 0; /* ✅ top corners rounded */
+}
+
+
+/* ---------- Homepage content offset ----------
+   Push homepage content down while leaving
+   the fixed header and background in place.
+   Adjust --homepage-offset to increase/decrease spacing.
+   -------------------------------------------------- */
+:root {
+  --homepage-offset: 70px;
+}
+
+.mainpage {
+  box-sizing: border-box;   /* ensure padding is counted reliably */
+  padding-top: var(--homepage-offset);
+}
+
+/* ---------- Move constellations down with page content ---------- */
+/* Assumes you already have: :root { --homepage-offset: 120px; } */
+.constellations {
+  /* use the homepage offset (fallback to 120px if var missing) */
+  top: var(--homepage-offset, 70px) !important;
+}
+
+/* Safety: if constellations were accidentally fixed instead of absolute,
+   translate down instead of changing top (prevents re-positioning issues) */
+.constellations[style*="position:fixed"],
+.constellations.fixed {
+  transform: translateY(var(--homepage-offset, 120px)) !important;
+}
+
+/* Push down all page content except homepage */
+body:not(.navbar) main {
+  margin-top: 50px; /* adjust as needed */
+}
+
+/* Only apply grid to photo gallery page */
+.photo-gallery-page .img-sections {
+  display: grid !important;
+  grid-template-columns: repeat(4, 1fr); /* 4 per row */
+  gap: 1.5rem;
+  justify-items: center;
+}
+
+@media (max-width: 768px) {
+  .photo-gallery-page .img-sections {
+    grid-template-columns: 1fr; /* 1 per row */
+  }
+}
+
+.photo-gallery-page .img-sections .card {
+  width: 100%;
+  max-width: 240px;
+  height: 160px;
+}
+
+.footer-container {
+    background-color: rgba(0, 0, 0, 0);
+    text-align: center;
+    padding: 15px;
+    font-size: 14px;
+    color: white;
+    margin-top: 40px;
+}
+
+.text-muted {
+  color: gray !important;
+}
+
+footer .social-links img {
+  width: 40px;   /* adjust size */
+  height: 40px;  /* keeps them square */
+  object-fit: contain;
+  margin: 0 8px; /* spacing between icons */
+  transition: transform 0.2s ease; /* optional hover effect */
+}
+
+footer .social-links img:hover {
+  transform: scale(1.2); /* makes them pop a bit on hover */
+}
+
+/* Make carousel captions visible and readable on small screens */
+.carousel-caption {
+  display: block !important;        /* ensure it's visible */
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 1rem;
+  z-index: 5;
+  text-align: left;
+  /* soft dark gradient so text is readable over images */
+  background: linear-gradient(180deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.45) 40%, rgba(0,0,0,0.75) 100%);
+}
+
+/* Heading and paragraph sizing */
+.carousel-caption h5 {
+  font-size: 1.15rem;
+  margin-bottom: .4rem;
+  font-weight: 700;
+}
+.carousel-caption p {
+  font-size: .9rem;
+  margin-bottom: 0;
+  line-height: 1.25;
+  max-height: 12vh;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Slightly larger image area on small screens so caption has room */
+@media (max-width: 767.98px) {
+  .carousel-item img {
+    max-height: 50vh; /* give more vertical space for image and caption */
+    height: auto;
+  }
+  .carousel-caption h5 { font-size: 1.25rem; }
+  .carousel-caption p { font-size: 1rem; }
+}
+
+/* Force carousel images to same height and crop */
+#carouselExampleCaptions .carousel-item img {
+  height: 60vh;          /* adjust as needed (50–70vh looks good) */
+  object-fit: cover;     /* ensures image fills and crops evenly */
+  object-position: center; /* centers crop */
+}
+
+/* On small screens, slightly reduce height */
+@media (max-width: 767.98px) {
+  #carouselExampleCaptions .carousel-item img {
+    height: 40vh;
+  }
+}
+
+.limit-width {
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+/* Transparent by default (ensure priority) */
+nav.navbar, .navbar {
+  background-color: transparent !important;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+/* Scrolled state: visible */
+nav.navbar.scrolled, .navbar.scrolled {
+  background-color: rgba(0,0,0,0.5) !important;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  border-bottom: 1px solid rgba(255,255,255,0.25);
+  z-index: 1100;
+}
+
+/* Semi-transparent + blurred navbar when scrolled */
+.navbar.scrolled {
+  background-color: rgba(0, 0, 0, 0.5) !important;
+  backdrop-filter: blur(2px);
+}
+
+/* ✅ When offcanvas is open, remove blur & make solid background */
+.offcanvas.show ~ .navbar,
+.navbar.scrolled.offcanvas-open {
+  backdrop-filter: none !important;
+  background-color: rgba(0, 0, 0, 0.9) !important;
+  z-index: 1055; /* higher than offcanvas backdrop */
+}
+
+/* Force 6 images per row using Bootstrap's grid */
+.gallery-photo {
+  aspect-ratio: 1 / 0.75 !important;   /* ✅ crop square */
+  object-fit: cover !important;     /* ✅ no stretching */
+  cursor: pointer;
+  display: block;
+}
+
+/* Make parent column behave like a card */
+.gallery-card {
+  cursor: pointer;
+  transition: transform 0.2s ease;
+  height: 100%;
+}
+.gallery-card:hover {
+  transform: scale(1.02);
+}
+
+.blog-description {
+  display: -webkit-box;       /* needed for -webkit-line-clamp */
+  display: box;               /* legacy spec */
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  text-overflow: ellipsis;    /* adds "..." at the cut-off */
+
+  -webkit-line-clamp: 3;      /* Chrome, Safari, Edge */
+  line-clamp: 3;              /* standard property */
+}
+
+.about {
+  background-color: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(2px);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 10px;
+}
+
+.about img {
+  max-width: 100%;
+}
+
+/* ===== Event detail: visual polish (add to end of stylesheet) ===== */
+
+/* container spacing tweak */
+.row.about {
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+/* left / right column card look without changing HTML */
+.row.about > .col-md-8,
+.row.about > .col-md-4 {
+  background: linear-gradient(180deg, rgba(8,10,14,0.55), rgba(6,7,10,0.45));
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255,255,255,0.06);
+}
+
+/* heading & meta */
+.row.about h1 {
+  margin-bottom: 0.25rem;
+  font-size: 2.2rem;
+  letter-spacing: -0.02em;
+  color: #fff;
+}
+.row.about .text-muted {
+  color: rgba(220,225,230,0.7);
+}
+
+/* image: fixed height + cover cropping so it never leaves empty space */
+.row.about > .col-md-8 img.img-fluid {
+  width: 100%;
+  height: 42vh;           /* desktop height — adjusts in media query below */
+  max-height: 520px;
+  object-fit: cover;      /* crops consistently */
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.6);
+  margin-bottom: 1rem;
+}
+
+/* paragraphs: readable sizing and justified so the right column doesn't show empty space */
+.row.about > .col-md-8 p {
+  font-size: 1.03rem;
+  line-height: 1.6;
+  color: rgba(255,255,255,0.95);
+  margin-bottom: 0.85rem;
+  text-align: justify;
+}
+
+/* event details card (right column) styling + sticky */
+.row.about > .col-md-4 {
+  position: sticky;
+  top: calc(56px + 1rem); /* stays visible — adjust if your navbar height changes */
+  height: fit-content;
+}
+
+/* list-group (remove boxed bootstrap look to match dark theme) */
+.row.about .list-group {
+  background: transparent;
+  padding: 0;
+}
+.row.about .list-group-item {
+  background: transparent;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  color: rgba(255,255,255,0.9);
+  font-size: 0.98rem;
+}
+
+/* muted fallback */
+.row.about .list-group-item.text-muted {
+  color: rgba(200,200,200,0.6);
+}
+
+/* registration link as a subtle button so it stands out */
+.row.about a {
+  display: inline-block;
+  margin-top: 0.5rem;
+  background: linear-gradient(180deg, rgba(13,110,253,0.95), rgba(11, 86, 210, 0.95));
+  color: #fff !important;
+  padding: 0.45rem 0.9rem;
+  border-radius: 8px;
+  text-decoration: none !important;
+  box-shadow: 0 8px 18px rgba(11,86,210,0.12);
+  transition: transform 160ms ease, box-shadow 160ms ease;
+}
+.row.about a:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 14px 36px rgba(11,86,210,0.16);
+}
+
+/* small helper for long description not to overflow visually */
+.row.about > .col-md-8 p:last-child {
+  margin-bottom: 0.2rem;
+}
+
+/* responsive adjustments */
+@media (max-width: 991px) {
+  .row.about > .col-md-8 img.img-fluid {
+    height: 34vh;
+    max-height: 420px;
+  }
+  .row.about > .col-md-4 {
+    position: static; /* avoid sticky on tablets/smaller */
+    margin-top: 0.75rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .row.about > .col-md-8,
+  .row.about > .col-md-4 {
+    padding: 0.9rem;
+    border-radius: 10px;
+  }
+  .row.about > .col-md-8 img.img-fluid {
+    height: 28vh;
+    max-height: 360px;
+  }
+  .row.about h1 {
+    font-size: 1.6rem;
+  }
+  .row.about > .col-md-8 p {
+    font-size: 0.98rem;
+    text-align: left; /* better for very narrow screens */
+  }
+}
+
+/* minor accessibility: ensure text contrast on background */
+.row.about, .row.about * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* ===== Unified background for event area (override previous per-column styling) ===== */
+.row.about {
+  background: linear-gradient(180deg, rgba(8,10,14,0.55), rgba(6,7,10,0.45));
+  border-radius: 12px;
+  padding: 1.25rem;
+  border: 1px solid rgba(255,255,255,0.06);
+  gap: 1.5rem;
+}
+
+/* Remove separate backgrounds from the two columns but keep internal padding */
+.row.about > .col-md-8,
+.row.about > .col-md-4 {
+  background: transparent !important;
+  border: none !important;
+  border-radius: 0 !important; /* parent has rounded corners */
+  padding: 1rem !important;     /* keep breathing room inside each column */
+  box-shadow: none !important;
+}
+
+/* Keep the right column sticky but visually unified */
+.row.about > .col-md-4 {
+  position: sticky;
+  top: calc(56px + 1rem);
+  height: fit-content;
+}
+
+/* Slight visual separation without separate backgrounds: subtle divider */
+.row.about > .col-md-8 { 
+  /* optional: add a faint right border to separate areas on wide screens */
+  border-right: 1px solid rgba(255,255,255,0.04);
+}
+@media (max-width: 991px) {
+  .row.about > .col-md-8 { border-right: none; }
+}
+
+/* keep image crop + spacing */
+.row.about > .col-md-8 img.img-fluid {
+  width: 100%;
+  height: 42vh;
+  max-height: 520px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 8px;
+  display: block;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.45);
+  margin-bottom: 1rem;
+}
+
+/* ensure list-group items match unified style */
+.row.about .list-group,
+.row.about .list-group-item {
+  background: transparent;
+  border: none;
+  padding-left: 0;
+  padding-right: 0;
+  color: rgba(255,255,255,0.9);
+}
+
+/* ===== Pagination: dark / starry theme ===== */
+/* color tokens — tweak if you want different blues */
+:root {
+  --aac-pag-bg: rgba(8,10,14,0.45);      /* container background */
+  --aac-pag-border: rgba(255,255,255,0.06);
+  --aac-pag-muted: rgba(200,200,200,0.55);
+  --aac-blue-1: #1952a7;                 /* primary */
+  --aac-blue-2: #22467b;                 /* darker */
+  --aac-white: #ffffff;
+}
+
+/* base pagination container */
+.pagination {
+  margin-top: 1rem;
+  z-index: 3;
+}
+
+/* page items (links and spans) */
+.pagination .page-link {
+  background: transparent;
+  color: var(--aac-white);
+  border: 1px solid var(--aac-pag-border);
+  min-width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 0.6rem;
+  border-radius: 10px;
+  transition: transform 140ms ease, box-shadow 140ms ease, background 140ms ease;
+  backdrop-filter: blur(4px);
+}
+
+/* subtle spacing */
+.pagination .page-item + .page-item {
+  margin-left: 0.5rem;
+}
+
+/* hover — soft glow */
+.pagination .page-link:hover {
+  background: linear-gradient(180deg, rgba(13,110,253,0.07), rgba(11,86,210,0.06));
+  color: var(--aac-white);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 26px rgba(11,86,210,0.12);
+  text-decoration: none;
+}
+
+/* active page */
+.pagination .page-item.active .page-link,
+.pagination .page-link:focus {
+  background: linear-gradient(180deg, var(--aac-blue-1), var(--aac-blue-2));
+  color: var(--aac-white);
+  border: 1px solid rgba(8, 43, 100, 0.65);
+  box-shadow: 0 10px 30px rgba(10, 52, 119, 0.22);
+  transform: translateY(-3px);
+}
+
+/* disabled state */
+.pagination .page-item.disabled .page-link,
+.pagination .page-link[aria-disabled="true"] {
+  color: var(--aac-pag-muted);
+  border-color: rgba(255,255,255,0.03);
+  background: transparent;
+  transform: none;
+  box-shadow: none;
+  cursor: not-allowed;
+}
+
+/* Previous/Next arrows (increase hit area) */
+.pagination .page-link .bi {
+  font-size: 1.05rem; /* bootstrap icon size if used */
+}
+.pagination .page-link[rel="prev"],
+.pagination .page-link[rel="next"]{
+  min-width: 52px;
+}
+
+/* compact look on mobile */
+@media (max-width: 576px) {
+  .pagination .page-link {
+    min-width: 38px;
+    height: 38px;
+    padding: 0 0.4rem;
+    border-radius: 8px;
+    font-size: 0.95rem;
+  }
+  .pagination .page-item + .page-item {
+    margin-left: 0.35rem;
+  }
+}
+
+/* make the ul background subtly show (optional) */
+nav[aria-label="Blog pagination"] {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+}
+
+/* accessibility: focus outline fallback */
+.pagination .page-link:focus {
+  outline: 3px solid rgba(0, 42, 104, 0.18);
+  outline-offset: 2px;
+}
+
+/* Pagination: solid dark buttons instead of transparent */
+.pagination .page-link {
+  background: rgba(20, 20, 20, 0.85) !important;
+  color: var(--aac-white) !important;
+  border: 1px solid rgba(255,255,255,0.06) !important;
+  backdrop-filter: blur(3px);
+}
+
+/* Slightly lighter on hover for affordance */
+.pagination .page-link:hover {
+  background: rgba(28, 28, 28, 0.95) !important;
+  box-shadow: 0 10px 26px rgba(11,86,210,0.12);
+  transform: translateY(-2px);
+}
+
+/* Active state remains the blue gradient for contrast */
+.pagination .page-item.active .page-link,
+.pagination .page-link:focus {
+  background: linear-gradient(180deg, var(--aac-blue-1), var(--aac-blue-2)) !important;
+  color: var(--aac-white) !important;
+  border: 1px solid rgba(11,86,210,0.65) !important;
+  box-shadow: 0 10px 30px rgba(11,86,210,0.22);
+}
+
+/* Disabled slightly faded */
+.pagination .page-item.disabled .page-link {
+  background: rgba(20, 20, 20, 0.65) !important;
+  color: rgba(200,200,200,0.45) !important;
+  border-color: rgba(255,255,255,0.03) !important;
+  box-shadow: none !important;
+}
+
+.card {
+  text-align: left;
+}
+
+/* ===== Calendar selection: keep it a perfect circle (override earlier rules) ===== */
+#calendar-popup table td.calendar-day {
+  padding: 4px !important;               /* small gap so the inner circle can center */
+  vertical-align: middle;
+}
+
+/* Make the inner element a true square using aspect-ratio (responsive) */
+#calendar-popup table td.calendar-day > div {
+  width: min(44px, 9vw) !important;      /* 44px on desktop, scales down on very small screens */
+  aspect-ratio: 1 / 1 !important;        /* forces square */
+  height: auto !important;               /* override `height: 100%` if present */
+  min-width: 36px !important;
+  min-height: 36px !important;
+  border-radius: 50% !important;         /* perfect circle */
+  display: inline-flex !important;       /* don't stretch to full cell height */
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* Ensure the active/background state still applies to the inner circle */
+#calendar-popup table td.calendar-day > div.bg-primary,
+#calendar-popup table td.calendar-day.active > div {
+  background-color: #0d6efd !important;
+  color: white !important;
+}
+
+/* If classes accidentally applied to the td, style the inner div so it remains a circle */
+#calendar-popup table td.calendar-day > div,
+#calendar-popup table td.calendar-day.bg-primary > div,
+#calendar-popup table td.calendar-day.active > div,
+#calendar-popup table td.calendar-day.text-white > div {
+  width: min(44px, 9vw) !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* color the inner div when the td has the bg-primary/text-white classes */
+#calendar-popup table td.calendar-day.bg-primary > div,
+#calendar-popup table td.calendar-day.active > div {
+  background-color: #0d6efd !important;
+  color: #fff !important;
+}
+
+/* ===== Calendar: fix hover so it stays a perfect circle ===== */
+
+/* 1) Prevent the TD from getting a full-cell background on hover */
+#calendar-popup table td.calendar-day:hover {
+  background: transparent !important;
+}
+
+/* 2) Make the inner DIV show the hover effect (circle, subtle ring). 
+   Only apply when the inner div is not the selected/active circle. */
+#calendar-popup table td.calendar-day:hover > div:not(.active):not(.bg-primary) {
+  width: min(44px, 9vw) !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+
+  /* visual hover styles */
+  background-color: rgba(13, 110, 253, 0.12) !important; /* faint blue fill */
+  color: inherit !important;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.12), 0 0 0 6px rgba(13,110,253,0.06) !important; /* soft ring */
+  transform: translateY(-2px);
+  transition: transform 120ms ease, box-shadow 160ms ease, background-color 120ms ease;
+  cursor: pointer;
+}
+
+/* Slightly stronger hover when the td already has hover classes applied to td */
+#calendar-popup table td.calendar-day.bg-primary:hover > div,
+#calendar-popup table td.calendar-day.active:hover > div {
+  /* don't override the active selection — keep its background & white text */
+  background-color: #0d6efd !important;
+  color: #fff !important;
+  box-shadow: 0 8px 20px rgba(13,110,253,0.18) !important;
+  transform: translateY(-2px);
+}
+
+/* Optional: if your code sometimes puts hover classes on the TD, force the td's children to be circle */
+#calendar-popup table td.calendar-day.bg-primary > div,
+#calendar-popup table td.calendar-day.active > div,
+#calendar-popup table td.calendar-day.text-white > div {
+  width: min(44px, 9vw) !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+/* ===== Fix: remove oval (ring/shadow) from the td and place it on the inner circle ===== */
+
+/* 1) Stop the td from painting any hover/active outline or background */
+#calendar-popup table td.calendar-day,
+#calendar-popup table td.calendar-day:hover,
+#calendar-popup table td.calendar-day.active {
+  background: transparent !important;
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+/* 2) Ensure the inner div is a square circle and centered */
+#calendar-popup table td.calendar-day > div {
+  width: min(44px, 9vw) !important;
+  aspect-ratio: 1 / 1 !important;
+  height: auto !important;
+  min-width: 36px !important;
+  min-height: 36px !important;
+  border-radius: 50% !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  margin: 0 auto !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+  transition: transform 120ms ease, box-shadow 160ms ease, background-color 120ms ease;
+}
+
+/* 3) Apply the blue ring + shadow to the inner div when active/selected */
+#calendar-popup table td.calendar-day > div.active,
+#calendar-popup table td.calendar-day > div.bg-primary {
+  outline: 3px solid rgba(13,110,253,0.35);
+  outline-offset: 6px;                         /* creates the ring spacing */
+  box-shadow: 0 6px 18px rgba(13,110,253,0.12);
+  background-color: #0d6efd !important;
+  color: #fff !important;
+  transform: translateY(-2px);
+}
+
+/* 4) Make hover also apply to the inner div (soft ring) */
+#calendar-popup table td.calendar-day:hover > div:not(.active):not(.bg-primary) {
+  background-color: rgba(13,110,253,0.12) !important;
+  box-shadow: 0 6px 18px rgba(13,110,253,0.08) !important;
+  transform: translateY(-2px);
+  cursor: pointer;
+}

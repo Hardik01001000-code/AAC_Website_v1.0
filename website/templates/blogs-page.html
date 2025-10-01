@@ -1,0 +1,51 @@
+<!--Blogs Page-->
+{% extends "layout.html" %}
+{% load static %}
+
+{% block title %}AAC{% endblock %}
+
+{% block extra_js %}
+<script id="blog-data" type="application/json">
+    {{ qs_json|safe }}
+</script>
+<script src="{% static 'js/blogs.js' %}"></script>
+{% endblock %}
+
+{% block content %}
+    <div class="background"></div>
+    <div class="overlay"></div>
+    <div class="search">
+        <input id="search" class="form-control" type="search" placeholder="Search blog posts" aria-label="Search">
+        <select id="category" class="form-select">
+            <option value="">All Categories</option>
+            {% for key, value in BLOG_CATEGORIES %}
+                <option value="{{ key }}">{{ value }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <!--Each Blog-->
+    <div id="blogs-container" class="container-fluid blog">
+        {% for blog in blogs %}
+        <div class="card mb-3" style="max-width: 1000px; min-width: 300px;">
+            <div class="row g-0">
+                <div class="col-md-4">
+                <img src="{{ blog.blog_image.url }}" class="img-fluid rounded-start" alt="{{ blog.title }}">
+                </div>
+                <div class="col-md-8">
+                <div class="card-body">
+                    <a href="{% url 'blog' pk=blog.pk %}" class="stretched-link"></a>
+                    <h5 class="card-title">{{ blog.title }}</h5>
+                    <p class="card-text blog-description">{{ blog.description }}</p>
+                    <p class="card-text text-white" ><small>By: {{ blog.author }}</small></p>
+                    <p class="card-text text-white"><small><strong>Category:</strong> {{ blog.get_category_display }}</small></p>
+                </div>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+    <nav aria-label="Blog pagination">
+      <ul id="pagination" class="pagination justify-content-center mt-3"></ul>
+    </nav>
+{% endblock %}
