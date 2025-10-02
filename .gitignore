@@ -8,6 +8,7 @@ __pycache__/
 # Django specific
 db.sqlite3
 *.log
+*.bak
 
 # Secrets file (if you use one)
 .env
