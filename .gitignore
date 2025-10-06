@@ -10,6 +10,7 @@ __pycache__/
 db.sqlite3
 *.log
 db.sqlite3.bak_*
+media/
 
 # Secrets file (if you use one)
 .env
