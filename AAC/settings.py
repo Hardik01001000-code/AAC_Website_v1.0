@@ -41,6 +41,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'website.apps.WebsiteConfig',
+    'django_cleanup.apps.CleanupConfig',
+    'django_ckeditor_5',
 ]
 
 MIDDLEWARE = [
@@ -169,3 +171,16 @@ if DEBUG:
             'level': 'INFO',
         },
     }
+
+# CKEDITOR 5 CONFIGURATION
+CKEDITOR_5_CONFIGS = {
+    'default': {
+        'toolbar': ['heading', '|', 'bold', 'italic', 'link',
+                    'bulletedList', 'numberedList', 'blockQuote', 'imageUpload'],
+        'theme': 'dark',
+        # 'image': {
+        #     'toolbar': ['imageStyle:inline', 'imageStyle:block', 'imageStyle:side', '|',
+        #                 'toggleImageCaption', 'imageTextAlternative']
+        # }
+    }
+}

@@ -1,4 +1,5 @@
 from django.db import models
+from django_ckeditor_5.fields import CKEditor5Field
 
 # Projects
 # Currently No need to implement, will see in future
@@ -109,7 +110,8 @@ class Blog(models.Model):
     title = models.CharField(max_length=128, default="")
     author = models.CharField(max_length=128)
     description = models.CharField(max_length=1024)
-    content = models.TextField(max_length=16384)
+    content = CKEditor5Field(max_length=16384)
+
     blog_image = models.ImageField(blank=False, null=False, upload_to="gallery/blogs/", default="")
     category = models.CharField(max_length=32, choices=BLOG_CATEGORIES, null=True, blank=True, default='astronomy')
 

@@ -14,7 +14,7 @@
         <img src="{{ blog.blog_image.url }}" class="blog-header-image">
         <div class="blog-content">
             <h2><strong>{{ object.title }}</strong></h2>
-            <p>{{ object.content|linebreaks }}</p>
+            {{ object.content|safe }}
             <h4>Author:</h4>
             <p>{{ object.author }}</p>
         </div>
