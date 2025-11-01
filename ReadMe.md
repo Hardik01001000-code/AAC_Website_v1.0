@@ -15,7 +15,9 @@ Git
 Open your terminal, navigate to where you want to store the project, and run the following command:
 
 ```bash
-git clone [https://github.com/Hardik01001000-code/AAC_Website_v1.0.git](https://github.com/Hardik01001000-code/AAC_Website_v1.0.git)
+git clone https://github.com/Hardik01001000-code/AAC_Website_v1.0.git
+```
+```bash
 cd AAC_Website_v1.0
 ```
 
@@ -71,7 +73,7 @@ DEBUG=True
 ALLOWED_HOSTS=127.0.0.1,localhost
 
 # Local development origins
-CSRF_TRUSTED_ORIGINS=[http://127.0.0.1:8000](http://127.0.0.1:8000),http://localhost:8000
+CSRF_TRUSTED_ORIGINS=http://127.0.0.1:8000,http://localhost:8000
 
 # This can be false for local development
 SERVE_MEDIA=False
@@ -101,4 +103,4 @@ python manage.py runserver
 ```
 
 
-You can now view your local version of the website by opening https://www.google.com/url?sa=E&source=gmail&q=http://127.0.0.1:8000/ in your web browser.
+You can now view your local version of the website by opening ```bash http://127.0.0.1:8000/``` in your web browser.
