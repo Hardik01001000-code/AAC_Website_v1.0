@@ -103,4 +103,4 @@ python manage.py runserver
 ```
 
 
-You can now view your local version of the website by opening ```bash http://127.0.0.1:8000/``` in your web browser.
+You can now view your local version of the website by opening ```http://127.0.0.1:8000/``` in your web browser.
