@@ -12,20 +12,30 @@
 <div class="overlay"></div>
 <div class="container content">
     <div class="row about p-3">
-        <div class="col-md-8">
+        <div class="col-md-12">
             <h1>{{ event.name }}</h1>
             {% if event.date %}
                 <p class="text-muted">{{ event.date|localtime|date:"F j, Y" }}</p>
             {% endif %}
-            {% if event.image %}
-                <img src="{{ event.image.url }}" alt="{{ event.name }}" class="img-fluid mb-4">
-            {% endif %}
-            <p>{{ event.description|linebreaks }}</p>
-            <p><strong>Location: </strong>{{ event.location }}</p>
-            {% if event.registration_link %}
-                <a href="{{ event.registration_link }}">Register Here</a>
-            {% else %}
-            {% endif %}
+
+            <div class="row align-items-start mt-3">
+
+                <div class="col-md-7">
+                    <p>{{ event.description|linebreaks }}</p>
+                    <p><strong>Location: </strong>{{ event.location }}</p>
+                    {% if event.registration_link %}
+                        <a href="{{ event.registration_link }}">Register Here</a>
+                    {% else %}
+                    {% endif %}
+                </div>
+
+                <div class="col-md-5">
+                    {% if event.image %}
+                        <img src="{{ event.image.url }}" alt="{{ event.name }}" class="img-fluid" style="border-radius: 8px; box-shadow: 0 10px 30px rgba(0,0,0,0.6);">
+                    {% endif %}
+                </div>
+
+            </div>
         </div>
         <div class="col-md-4">
             <h2>Event Details</h2>
