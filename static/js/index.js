@@ -2,6 +2,18 @@
 (function() {
     'use strict';
 
+    // CONFIGURABLE CONSTANTS
+    const BASE_ANGLE = 45;          // Default shooting direction (degrees)
+    const ANGLE_VARIATION = 10;     // Range of variation around the base angle (±5 degrees)
+    const MIN_DISTANCE = 300;       // Minimum travel distance (px)
+    const MAX_DISTANCE = 700;       // Maximum travel distance (px)
+    const MIN_DURATION = 0.8;       // Minimum animation duration (seconds)
+    const MAX_DURATION = 1.5;       // Maximum animation duration (seconds)
+    const MIN_INTERVAL = 20000;     // Minimum time between stars (ms)
+    const MAX_INTERVAL = 30000;     // Maximum time between stars (ms)
+    const STAR_BAND_HEIGHT = 0.2;   // Portion of screen height where stars appear (top 20%)
+
+    // STYLES
     const style = document.createElement('style');
     style.textContent = `
         .shooting-star {
@@ -39,18 +51,19 @@
     `;
     document.head.appendChild(style);
 
+    // SHOOTING STAR CREATION
     function createShootingStar() {
         const star = document.createElement('div');
         star.className = 'shooting-star';
 
         const startX = Math.random() * window.innerWidth;
-        const startY = Math.random() * (window.innerHeight * 0.2);
-        const angle = 45 + (Math.random() * 10 - 5);
-        const distance = 300 + Math.random() * 400;
+        const startY = Math.random() * (window.innerHeight * STAR_BAND_HEIGHT);
+        const angle = BASE_ANGLE + (Math.random() * ANGLE_VARIATION - ANGLE_VARIATION / 2);
+        const distance = MIN_DISTANCE + Math.random() * (MAX_DISTANCE - MIN_DISTANCE);
         const angleRad = (angle * Math.PI) / 180;
         const distanceX = Math.cos(angleRad) * distance;
         const distanceY = Math.sin(angleRad) * distance;
-        const duration = 0.8 + Math.random() * 0.7;
+        const duration = MIN_DURATION + Math.random() * (MAX_DURATION - MIN_DURATION);
 
         star.style.cssText = `
             left: ${startX}px;
@@ -63,12 +76,12 @@
 
         document.body.appendChild(star);
 
-        setTimeout(() => star.remove(), duration * 1000);
+        setTimeout(() => { if (star.parentNode) star.remove(); }, duration * 1000);
     }
 
+    // STAR SCHEDULING
     function scheduleNextStar() {
-        // One star between every 20s to 30s randomly
-        const interval = 20000 + Math.random() * 10000;
+        const interval = MIN_INTERVAL + Math.random() * (MAX_INTERVAL - MIN_INTERVAL);
 
         setTimeout(() => {
             createShootingStar();
